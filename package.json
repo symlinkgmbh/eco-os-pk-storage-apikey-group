@@ -1,0 +1,48 @@
+{
+  "name": "@symlinkde/eco-os-pk-storage-apikey-group",
+  "version": "0.0.6",
+  "description": "Package containing storage adapter for api key groups.",
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "clean": "yarn run rimraf lib",
+    "start:dev": "ts-node src/server.ts",
+    "lint:fix": "yarn run tslint --fix --project .",
+    "build": "yarn clean && yarn tsc && yarn gulp compile:hard && yarn gulp inject:license"
+  },
+  "dependencies": {
+    "@symlinkde/eco-os-pk-storage": "^0.0.*",
+    "config": "3.2.4",
+    "inversify": "5.0.1",
+    "reflect-metadata": "0.1.13"
+  },
+  "devDependencies": {
+    "@symlinkde/eco-os-pk-models": "^0.0.*",
+    "@types/config": "0.0.36",
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "google-closure-compiler": "20191111.0.0",
+    "gulp": "4.0.2",
+    "gulp-debug": "4.0.0",
+    "gulp-flatmap": "1.0.2",
+    "gulp-inject-string": "1.1.2",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "mustache": "3.1.0",
+    "prettier": "1.19.0",
+    "pretty-quick": "2.0.1",
+    "rimraf": "3.0.0",
+    "sonarqube-scanner": "2.5.0",
+    "ts-jest": "24.1.0",
+    "ts-node": "8.5.2",
+    "tslint": "5.20.0",
+    "typescript": "3.7.2"
+  },
+  "company": "Symlink GmbH",
+  "homepage": "https://2ndlock.com",
+  "repository": "https://gitlab.com/symlinkde"
+}
