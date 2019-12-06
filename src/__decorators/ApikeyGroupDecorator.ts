@@ -17,5 +17,16 @@
 
 
 
-export * from "./__decorators";
-export * from "./apikeyStorage";
+import { PkStorageContent } from "@symlinkde/eco-os-pk-models";
+import { apikeygroupContainer, APIKEY_GROUP_TYPES } from "../apikeyStorage";
+
+// tslint:disable-next-line:typedef
+function injectApikeyGroupService<T extends new (...args: any[]) => {}>(constructor: T) {
+  return class extends constructor {
+    public apikeygroupService: PkStorageContent.IContentService = apikeygroupContainer.get<
+      PkStorageContent.IContentService
+    >(APIKEY_GROUP_TYPES.IApikeyGroupService);
+  };
+}
+
+export { injectApikeyGroupService };

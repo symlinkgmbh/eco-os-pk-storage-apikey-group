@@ -17,5 +17,22 @@
 
 
 
-export * from "./__decorators";
-export * from "./apikeyStorage";
+import { MsUser } from "@symlinkde/eco-os-pk-models";
+
+export class ApikeyGroup implements MsUser.IApikeyGroup {
+  public owner: string;
+  public domains: Array<string>;
+  public key: string;
+  public members: Array<string>;
+  public expireDate?: Date;
+  public accessPerHour?: number;
+
+  constructor(key: MsUser.IApikeyGroup) {
+    this.owner = key.owner;
+    this.domains = key.domains;
+    this.key = key.key;
+    this.members = key.members;
+    this.expireDate = key.expireDate;
+    this.accessPerHour = key.accessPerHour;
+  }
+}

@@ -17,5 +17,4 @@
 
 
 
-export * from "./__decorators";
-export * from "./apikeyStorage";
+export { injectApikeyGroupService } from "./ApikeyGroupDecorator";

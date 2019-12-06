@@ -1,6 +1,6 @@
 {
   "name": "@symlinkde/eco-os-pk-storage-apikey-group",
-  "version": "0.0.6",
+  "version": "0.0.17",
   "description": "Package containing storage adapter for api key groups.",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -15,13 +15,12 @@
     "build": "yarn clean && yarn tsc && yarn gulp compile:hard && yarn gulp inject:license"
   },
   "dependencies": {
+    "@symlinkde/eco-os-pk-models": "^0.0.*",
     "@symlinkde/eco-os-pk-storage": "^0.0.*",
-    "config": "3.2.4",
     "inversify": "5.0.1",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@symlinkde/eco-os-pk-models": "^0.0.*",
     "@types/config": "0.0.36",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.14",

@@ -17,5 +17,15 @@
 
 
 
-export * from "./__decorators";
-export * from "./apikeyStorage";
+import "reflect-metadata";
+import { Container } from "inversify";
+import { PkStorageApikeyGroup } from "@symlinkde/eco-os-pk-models";
+import { APIKEY_GROUP_TYPES } from "./ApikeyGroupTypes";
+import { ApikeyGroupService } from "./ApikeyGroupService";
+
+const apikeygroupContainer = new Container();
+apikeygroupContainer
+  .bind<PkStorageApikeyGroup.IApikeyGroupService>(APIKEY_GROUP_TYPES.IApikeyGroupService)
+  .to(ApikeyGroupService)
+  .inSingletonScope();
+export { apikeygroupContainer };

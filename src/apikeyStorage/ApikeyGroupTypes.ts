@@ -17,5 +17,8 @@
 
 
 
-export * from "./__decorators";
-export * from "./apikeyStorage";
+const APIKEY_GROUP_TYPES = {
+  IApikeyGroupService: Symbol.for("IApikeyGroupService"),
+};
+
+export { APIKEY_GROUP_TYPES };
